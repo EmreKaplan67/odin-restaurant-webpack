@@ -1,4 +1,6 @@
-/* Reset */
+/* ===================== */
+/* RESET & GLOBAL STYLES */
+/* ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -11,15 +13,9 @@ body {
   color: #333;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* NAVIGATION BAR */
+/* ===================== */
+/* HEADER & NAVIGATION */
+/* ===================== */
 header {
   background-color: #3b2f2f; /* dark brown */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -27,31 +23,35 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  height: 90px;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navigation {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1.8rem 2rem;
+  gap: 20px;
+  height: 100%;
 }
 
 /* NAV BUTTONS */
 .nav-button {
+  color: #f3e5c3;
   background: none;
   border: none;
-  color: #f4e1c1;
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 10px 15px;
+  transition: all 0.2s ease-in-out;
 }
 
-.nav-button:hover {
-  color: #ffcc70; /* golden highlight */
-  transform: translateY(-2px);
+.nav-button.active {
+  color: #c9a44f;
+  border-bottom: 3px solid #c9a44f;
 }
 
 /* LOGO + HOME BUTTON */
@@ -73,58 +73,63 @@ header {
   color: #ffcc70;
 }
 
-/* HERO */
+/* ===================== */
+/* MAIN CONTENT CONTAINER */
+/* ===================== */
+#content {
+  margin-top: 90px; /* ensures space below fixed header */
+  padding: 20px;
+  min-height: calc(100vh - 90px);
+}
+
+/* Normalize section spacing */
+section {
+  margin-bottom: 60px;
+  padding-top: 40px;
+  text-align: center;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+/* ===================== */
+/* HERO SECTION */
+/* ===================== */
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   padding: 1.8rem 2rem;
-  margin-top: 6rem;
-  scroll-margin-top: 6rem;
-  margin-bottom: 2rem;
 }
 
 .hero-image {
   width: 35%;
 }
+
 .hero-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
 }
-.hero-text button {
-  padding: 1em 2em;
-  border-radius: 25px;
-  background: #ffcc70;
-  color: #3b2f2f;
-  font-size: 1.3rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.hero-text button:hover {
-  background: #3b2f2f;
-  color: #f4e1c1;
-  transform: translateY(-2px);
-}
 
+/* ===================== */
 /* WHO WE ARE */
+/* ===================== */
 .who-we-are {
   background-color: #f9f6f1;
-  padding: 80px 20px;
   max-width: 900px;
   margin: 0 auto;
-  text-align: center;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  scroll-margin-top: 2rem;
+  padding: 60px 20px;
 }
 
 .who-we-are h2 {
   font-size: 2.5rem;
-  color: #3e2f1c; /* dark brown for elegance */
+  color: #3e2f1c;
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
@@ -135,7 +140,7 @@ header {
   display: block;
   width: 60%;
   height: 3px;
-  background-color: #c9a44f; /* gold accent */
+  background-color: #c9a44f;
   margin: 10px auto 0;
   border-radius: 2px;
 }
@@ -150,13 +155,12 @@ header {
   margin-right: auto;
 }
 
+/* ===================== */
 /* MENU */
+/* ===================== */
 .menu {
   background-color: #f9f6f1;
   padding: 80px 20px;
-  text-align: center;
-  margin-top: 2rem;
-  scroll-margin-top: 2rem;
 }
 
 .menu h2 {
@@ -216,17 +220,17 @@ header {
 }
 
 .menu-info .price {
-  color: #c9a44f; /* gold accent */
+  color: #c9a44f;
   font-weight: bold;
   font-size: 1.1rem;
 }
 
-/* RESRVATIONS */
+/* ===================== */
+/* RESERVATIONS */
+/* ===================== */
 .reservation {
   background-color: #fff;
   padding: 80px 20px;
-  text-align: center;
-  scroll-margin-top: 2rem;
 }
 
 .reservation h2 {
@@ -278,12 +282,12 @@ header {
   background-color: #b38e3a;
 }
 
+/* ===================== */
 /* CONTACT */
+/* ===================== */
 .contact {
   background-color: #f9f6f1;
   padding: 80px 20px;
-  text-align: center;
-  scroll-margin-top: 2rem;
 }
 
 .contact h2 {
@@ -326,6 +330,9 @@ header {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* ===================== */
+/* MEDIA QUERIES */
+/* ===================== */
 @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
@@ -335,19 +342,4 @@ header {
   .contact-map iframe {
     height: 250px;
   }
-}
-
-/* FOOTER */
-.footer {
-  background-color: #3e2f1c;
-  text-align: center;
-  padding: 20px 10px;
-}
-
-.footer .disclaimer {
-  font-size: 0.85rem;
-  color: #d9cba3;
-  font-style: italic;
-  opacity: 0.8;
-  margin: 0;
 }
